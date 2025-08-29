@@ -71,35 +71,4 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Project card expand/collapse functionality
-function toggleProject(header) {
-    const card = header.parentElement;
-    const isExpanded = card.classList.contains('expanded');
-    
-    // Close all other cards
-    document.querySelectorAll('.project-card').forEach(otherCard => {
-        if (otherCard !== card) {
-            otherCard.classList.remove('expanded');
-        }
-    });
-    
-    // Toggle current card
-    if (isExpanded) {
-        card.classList.remove('expanded');
-    } else {
-        card.classList.add('expanded');
-    }
-}
-
-// Add event listeners to project headers
-document.addEventListener('DOMContentLoaded', function() {
-    const projectHeaders = document.querySelectorAll('.project-header');
-    
-    projectHeaders.forEach(header => {
-        header.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleProject(this);
-        });
-    });
-}); 
+ 
